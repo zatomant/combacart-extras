@@ -8,12 +8,12 @@
     "marketplace",
     "modx plugins",
     "evolution cms plugins",
-    "combacert extras"
+    "combacart extras"
   ],
   "type": "library",
   "minimum-stability": "stable",
   "license": "GPL-3.0-or-later",
-  "version": "2.6.30",
+  "version": "2.6.31",
   "version_short": "2.6",
   "authors": [
     {
