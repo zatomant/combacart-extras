@@ -38,7 +38,7 @@ class AfterStoreUpdate
         try {
 
             if ($stage['current'] == 'checkcomposer') {
-                exec(self::COMPOSER_PATH  . ' --version', $output, $returnCode);
+                exec(self::COMPOSER_PATH . ' --version', $output, $returnCode);
                 if ($returnCode !== 0) {
                     $this->die("Composer не знайдено. Встановіть Composer перед виконанням цього оновлення.\n");
                 }
@@ -126,7 +126,7 @@ class AfterStoreUpdate
 
                 $command = sprintf(
                     '%s install --working-dir=%s --prefer-dist --optimize-autoloader',
-                    self::COMPOSER_PATH ,
+                    self::COMPOSER_PATH,
                     escapeshellarg($this->_toPath)
                 );
                 if (PHP_SAPI !== 'cli') {

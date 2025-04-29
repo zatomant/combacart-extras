@@ -27,7 +27,7 @@ php process.php
   
 Якщо отримали повідомлення "Composer не знайдено. Встановіть Composer перед виконанням цього оновлення.", а ви впевнені що він є, перевірте шлях до composer.
 
-Шлях до composer регулюється системно, але ви можете примусово вказати повний шлях файлу composer. 
+Зазвичай, шлях до composer регулюється глобально системно, але ви можете примусово вказати повний шлях файлу composer. 
 Файл update/process.php строка 11
 ```
 private const COMPOSER_PATH = 'composer';
@@ -39,4 +39,8 @@ private const COMPOSER_PATH = '/usr/local/bin/composer';
 або
 ```
 private const COMPOSER_PATH = '/usr/bin/composer';
+```
+або додатково ще вказати версію php
+```
+private const COMPOSER_PATH = 'php8.1 /usr/bin/composer';
 ```
