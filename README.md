@@ -21,4 +21,22 @@ cd коренева_тека_вашого_сайту_/assets/plugins/combacart/u
 php process.php
 ```
 
-Важливо! Видаліть файл 'combacart/update/lock.php', щоб дозволити виконання кроку 5 с самого спочатку.
+Важливо! Видаліть файл 'combacart/update/lock.php', щоб дозволити виконання кроку 5 с самого спочатку.  
+
+##  Наявність composer ##  
+  
+Якщо отримали повідомлення "Composer не знайдено. Встановіть Composer перед виконанням цього оновлення.", а ви впевнені що він є, перевірте шлях до composer.
+
+Шлях до composer регулюється системно, але ви можете примусово вказати повний шлях файлу composer. 
+Файл update/process.php строка 11
+```
+private const COMPOSER_PATH = 'composer';
+```
+наприклад 
+```
+private const COMPOSER_PATH = '/usr/local/bin/composer';
+```
+або
+```
+private const COMPOSER_PATH = '/usr/bin/composer';
+```

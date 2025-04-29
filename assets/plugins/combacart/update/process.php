@@ -6,6 +6,10 @@ class AfterStoreUpdate
     private const MGS_OK = 'УСПІХ';
     private const MGS_ERROR = 'ПОМИЛКА';
 
+    // шлях до composer
+    // визначаться системно, але можна вказати шлях, наприклад '/usr/bin/composer'
+    private const COMPOSER_PATH = 'composer';
+
     private array $_cli_color = [
         'error' => "\033[31m",
         'success' => "\033[32m",
@@ -34,7 +38,7 @@ class AfterStoreUpdate
         try {
 
             if ($stage['current'] == 'checkcomposer') {
-                exec('composer --version', $output, $returnCode);
+                exec(self::COMPOSER_PATH  . ' --version', $output, $returnCode);
                 if ($returnCode !== 0) {
                     $this->die("Composer не знайдено. Встановіть Composer перед виконанням цього оновлення.\n");
                 }
@@ -121,7 +125,8 @@ class AfterStoreUpdate
                 }
 
                 $command = sprintf(
-                    'composer install --working-dir=%s --prefer-dist --optimize-autoloader',
+                    '%s install --working-dir=%s --prefer-dist --optimize-autoloader',
+                    self::COMPOSER_PATH ,
                     escapeshellarg($this->_toPath)
                 );
                 if (PHP_SAPI !== 'cli') {
@@ -145,11 +150,18 @@ class AfterStoreUpdate
                 if (in_array($stage['current'], ['final', 'ok'])) {
                     $this->setState('ok');
                     if (file_exists(dirname(__DIR__) . '/src/Core/Entity.php')) {
-                        include_once(dirname(__DIR__) . '/src/Core/Entity.php');
-                        $this->render("Встановлення/оновлення CombaCart завершено. ", "strong")
-                            ->render("Можна ")
-                            ->render("<a href=\"/" . \Comba\Core\Entity::PAGE_COMBA . "\">перейти</a>", "strong")
-                            ->render(" до керування замовленнями.\n\n");
+                        if (PHP_SAPI !== 'cli') {
+                            include_once(dirname(__DIR__) . '/src/Core/Entity.php');
+                            $this->render("Встановлення/оновлення CombaCart завершено. ", "strong")
+                                ->render("Можна ")
+                                ->render("<a href=\"/" . \Comba\Core\Entity::PAGE_COMBA . "\">перейти</a>", "strong")
+                                ->render(" до керування замовленнями.\n\n");
+                        } else {
+                            $this->render("Встановлення/оновлення CombaCart завершено. ", "strong")
+                                ->render("Можна ")
+                                ->render('<a href="/comba">перейти</a>',"strong")
+                                ->render(" до керування замовленнями.\n\n");
+                        }
                     } else {
                         $this->render("Встановлення/оновлення CombaCart завершено.\n", "strong");
                     }
