@@ -6,7 +6,7 @@
  * Read function
  *
  * @category    snippet
- * @version     2.5
+ * @version     2.6
  * @package     evo
  * @internal    @modx_category Comba
  * @internal    @installset base

@@ -5,7 +5,7 @@
  * Modx function for easy use with Comba
  *
  * @category    plugin
- * @version     2.5
+ * @version     2.6
  * @package     evo
  * @internal    @events OnDocFormSave,OnWebPageInit,OnPageNotFound
  * @internal    @modx_category Comba

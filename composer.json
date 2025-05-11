@@ -14,11 +14,11 @@
   "type": "library",
   "minimum-stability": "stable",
   "license": "GPL-3.0-or-later",
-  "version": "1.0.35",
+  "version": "1.0.38",
   "version_short": "1.0",
   "authors": [
     {
-      "name": "zatomant",
+      "name": "Maxim Yurchenko",
       "email": "zatomant@gmail.com"
     }
   ],

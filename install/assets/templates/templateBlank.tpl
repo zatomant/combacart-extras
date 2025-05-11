@@ -1,11 +1,11 @@
  /**
- * Checkout_tmplt
+ * Blank_tmplt
  *
- * Checkout template
+ * Blank template
  *
  * @category        templates
- * @name            checkout_tmplt
- * @desctiption     Checkout template
+ * @name            blank_tmplt
+ * @desctiption     Blank template
  * @internal        @type 1
  * @internal        @lock_template 0
  * @internal        @modx_category Comba
@@ -33,12 +33,11 @@
  <body>
  <div class="wrapper">
 
-     [[CombaHeader? &hide=`cart`]]
+     [!CombaHeader!]
 
      <div class="container">
          <div class="row">
              <div class="col">
-                 [!CombaHelper? &action=`read` &docTpl=`@FILE:/chunk_checkout` &docRowTpl=`@FILE:/chunk_checkout_spec_row` &docRowAltTpl=`@FILE:/chunk_checkout_spec_row_alt` &docRowOnDemandTpl=`@FILE:/chunk_checkout_spec_row_ondemand` &docEmptyTpl=`@FILE:/chunk_checkout_empty`!]
                  [*content*]
              </div>
          </div>

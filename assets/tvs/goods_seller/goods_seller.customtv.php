@@ -9,13 +9,15 @@
  * <seller></seller> з переліком uid Продавців розділениї через ';'
  */
 
+use Comba\Core\Entity;
+
 if (!IN_MANAGER_MODE) {
     die('<h1>ERROR:</h1><p>Please use the EVO Content Manager instead of accessing this file directly.</p>');
 }
 
 global $row;
 
-$field_elements = !empty($field_elements) ? $field_elements : '@EVAL return $modx->runSnippet("GoodsFunctions", ["fnct"=>"getSellers"]);';
+$field_elements = !empty($field_elements) ? $field_elements : '@EVAL return $modx->runSnippet("CombaFunctions", ["fnct"=>"getSellers"]);';
 list ($cmd, $param) = ParseCommand($field_elements);
 $cmd = trim($cmd);
 $param = parseTvValues($param, $tvsArray);
@@ -33,7 +35,7 @@ switch ($cmd) {
 /*
  * Перевіряти прив'язки Користувача до Продавців?
  */
-if (defined('COMBAMODX_MANAGER_SELLER_CHECK') && COMBAMODX_MANAGER_SELLER_CHECK) {
+if (Entity::get('MANAGER_SELLER_CHECK')) {
 
     $mgr = $modx->getUserInfo($modx->getLoginUserID());
     $_sellers_bind = null;
