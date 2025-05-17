@@ -38,14 +38,14 @@
        <input type="hidden" name="goodslguid" value="[[CombaFunctions? &fnct=`goodslguid` &string=`[*id*]_[*goods_code*]`]]">
        <a href="[(site_url)][[CombaFunctions? &fnct=`GetImage` &preset=`image-max`]]" class="venobox" data-gall="images" title="[*pagetitle*]">
         <picture>
+         <!-- маленьке webp зображення-->
+         <source srcset="[(site_url)][[CombaFunctions? &fnct=`GetImage` &phpthumb=`webp=1` &preset=`page-goods-2`]]" media="(max-width: 350.99px)" type="image/webp" />
          <!-- webp зображення-->
          <source
                  srcset="[(site_url)][[CombaFunctions? &fnct=`GetImage` &phpthumb=`webp=1` &preset=`page-goods-3`]]"
                  data-fullsize="[(site_url)][[CombaFunctions? &fnct=`GetImage` &phpthumb=`webp=1` &preset=`image-max`]]"
                  type="image/webp">
-         <!-- маленьке webp зображення-->
-         <source srcset="[(site_url)][[CombaFunctions? &fnct=`GetImage` &phpthumb=`webp=1` &preset=`page-goods-2`]]" media="(max-width: 350.99px)" type="image/webp" />
-         <!-- стандартне jpg/png зображення-->
+         <!-- стандартне jpg/png зображення для браузерів без підтримки webp -->
          <img loading="lazy"
               data-src="[(site_url)][[CombaFunctions? &fnct=`GetImage` &preset=`page-goods-3` &oper=`lazy`]]"
               data-fullsize="[(site_url)][[CombaFunctions? &fnct=`GetImage` &preset=`image-max`]]"
