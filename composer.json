@@ -14,7 +14,7 @@
   "type": "library",
   "minimum-stability": "stable",
   "license": "GPL-3.0-or-later",
-  "version": "1.0.38",
+  "version": "1.0.41",
   "version_short": "1.0",
   "authors": [
     {
@@ -23,6 +23,8 @@
     }
   ],
   "require": {
-    "php": ">=7.4"
+    "php": ">=7.4",
+    "ext-json": "*",
+    "ext-zip": "*"
   }
 }

@@ -12,7 +12,7 @@
 2. авторизуйтесь в адміністративній частині Evolution CMS ( /manager )
 3. запустіть модуль Extras, перейдіть до опції «Install by file», виберіть завантажений файл і натисніть «Install».
 4. дочекайтесь закінчення процесу інсталяції extras пакету
-5. відкрийте в браузері сторінку ваш_сайт/comba (або ваш_сайт/assets/plugins/combacart/update) для завершального кроку інсталяції - оновлення composer залежностей  
+5. відкрийте в браузері сторінку ваш_сайт/comba (або ваш_сайт/assets/plugins/combacart/update) для завершального кроку інсталяції - оновлення (composer update) залежностей  
 
 Якщо на завершальному кроці (5) ви отримуєте помилку 504 Gateway Time-out, оновіть сторінку.  
 Або запустіть скрипт напряму через консоль веб серверу:  
@@ -32,15 +32,15 @@ php process.php
 ```
 private const COMPOSER_PATH = 'composer';
 ```
-наприклад 
+наприклад так
 ```
 private const COMPOSER_PATH = '/usr/local/bin/composer';
 ```
-або
+або так
 ```
 private const COMPOSER_PATH = '/usr/bin/composer';
 ```
-або додатково ще вказати версію php
+чи додатково ще вказати версію php
 ```
 private const COMPOSER_PATH = 'php8.1 /usr/bin/composer';
 ```
