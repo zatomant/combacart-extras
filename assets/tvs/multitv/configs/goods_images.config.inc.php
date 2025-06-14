@@ -87,10 +87,35 @@ $settings['configuration'] = [
     'displayLength' => 100,
     'display' => 'All',
     'enablePaste' => false,
-    'sorting' => false
+    'sorting' => false,
+
 ];
 
 $settings['templates'] = [
-    'outerTpl' => '<div class="images">[+wrapper+]</div>',
-    'rowTpl' => '<div class="image"><img src="[+image+]" alt="[+legend+]" />'
+    'outerTpl' => '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">[+wrapper+]</div>',
+    'rowTpl' => '<div class="col-12 col-sm-6">s
+    <div class="position-relative">
+            <picture>
+                <source
+                        srcset="[(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[+docid+]` &n=`[+iteration+]` &preset=`page-goods-2` &flags=`webp,dw`]],
+                        [(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[+docid+]` &n=`[+iteration+]` &preset=`page-goods` &flags=`webp,dw`]]"
+                        data-fullsize="[(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[+docid+]` &n=`[+iteration+]` &preset=`image-max` &flags=`webp`]]"
+                        type="image/webp" sizes="(max-width: 400px) 340px, 567px">
+                <img loading="lazy"
+                     class="lazy img-thumbnail img-fluid rounded-lg w-100"
+                     data-src="[(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[+docid+]` &n=`[+iteration+]` &preset=`page-goods` &flags=`lazy,sof`]]"
+                     data-fullsize="[(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[+docid+]` &n=`[+iteration+]` &preset=`image-max`]]"
+                     alt="[*pagetitle*] ((legend))"
+                >
+            </picture>
+            <a href="[(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[+docid+]` &n=`[+iteration+]` &preset=`image-max`]]"
+            class="venobox position-absolute top-50 start-50 translate-middle"
+            data-gall="images" title="[*pagetitle*] ((legend))">
+                <span class="text-bg-primary opacity-50 p-3 rounded-circle shadow">
+                    <i class="bi bi-search fs-3"></i>
+                </span>
+            </a>
+    </div>
+</div>'
 ];
+

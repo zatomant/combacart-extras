@@ -44,7 +44,7 @@
                  [(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[*id*]` &preset=`page-goods-3` &flags=`webp,dw`]]"
                  data-fullsize="[(site_url)][[CombaFunctions? &fnct=`GetImage` &id=`[*id*]` &preset=`image-max` &flags=`webp`]]"
                  type="image/webp"
-                 sizes="(max-width: 480px) 380px, 470px"
+                 sizes="(max-width: 400px) 340px, 470px"
          >
          <!-- стандартне jpg/png зображення для браузерів без підтримки webp -->
          <img loading="lazy"
@@ -69,6 +69,7 @@
      </section>
 
      [*#content*]
+     [[if? &is=`[[multiTV? &tvName=`goods_images` &docid=`[*id*]`]]:empty:` &then=`` &else=`<h5>[(__images)]</h5>[[multiTV? &tvName=`goods_images` &docid=`[*id*]`]]`]]
     </div>
    </div>
   </div>

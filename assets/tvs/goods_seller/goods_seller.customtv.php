@@ -17,6 +17,7 @@ if (!IN_MANAGER_MODE) {
 
 global $row;
 
+$filtered_sellers = $_sellers = [];
 $field_elements = !empty($field_elements) ? $field_elements : '@EVAL return $modx->runSnippet("CombaFunctions", ["fnct"=>"getSellers"]);';
 list ($cmd, $param) = ParseCommand($field_elements);
 $cmd = trim($cmd);
@@ -60,10 +61,9 @@ if (Entity::get('MANAGER_SELLER_CHECK')) {
         $filtered_sellers = array_values(array_unique($filtered_sellers, SORT_REGULAR));
         $disabled_select = ' style="background-color: orange"';
     }
-} else {
-    $filtered_sellers = $_sellers;
 }
 
+$output = $output ?? '';
 foreach ($filtered_sellers as $row) {
     $selected = ($row['uid'] == $field_value) ? 'selected="selected"' : '';
     $output .= "<option value='" . $row['uid'] . "' " . $selected . ">" . $row['label'] . "</option>";

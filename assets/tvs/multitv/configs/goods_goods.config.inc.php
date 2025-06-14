@@ -1,103 +1,92 @@
 <?php
 
 $settings['display'] = 'datatable';
-$settings['fields'] = array(
-    'goods_avail' => array(
+$settings['fields'] = [
+    'goods_avail' => [
         'caption' => 'Наявність',
         'type' => 'text',
         'width' => '25'
-    ),
-    'goods_price' => array(
+    ],
+    'goods_price' => [
         'caption' => 'Ціна',
         'type' => 'text',
         'width' => '60'
-    ),
-    'goods_price_old' => array(
+    ],
+    'goods_price_old' => [
         'caption' => 'Ціна стара',
         'type' => 'text',
         'width' => '60'
-    ),
-    'goods_code' => array(
+    ],
+    'goods_code' => [
         'caption' => 'Код товару',
         'type' => 'text',
         'width' => '80'
-    ),
-    'goods_name' => array(
+    ],
+    'goods_name' => [
         'caption' => 'Назва',
         'type' => 'text',
         'width' => '200'
-    ),
-    'thumb' => array(
+    ],
+    'thumb' => [
         'caption' => 'Thumbnail',
         'type' => 'thumb',
         'thumbof' => 'image',
-    ),
-    'image' => array(
+    ],
+    'image' => [
         'caption' => 'Фото',
         'type' => 'image',
         'width' => '200'
-    ),
-    'img16x9' => array(
+    ],
+    'img16x9' => [
         'caption' => 'Пропорція 16x9',
         'type' => 'crop',
         'cropof' => 'image'
-    ),
-    'img4x3' => array(
+    ],
+    'img4x3' => [
         'caption' => 'Пропорція 4x3',
         'type' => 'crop',
         'cropof' => 'image'
-    ),
-    'img1x1' => array(
+    ],
+    'img1x1' => [
         'caption' => 'Пропорція 1x1',
         'type' => 'crop',
         'cropof' => 'image'
-    ),
-    'img2x3' => array(
+    ],
+    'img2x3' => [
         'caption' => 'Пропорція 2x3',
         'type' => 'crop',
         'cropof' => 'image'
-    ),
-);
-$settings['form'] = array(
-    array(
+    ],
+];
+$settings['form'] = [
+    [
         'caption' => 'Опис',
-        'content' => array(
-            'goods_avail' => array(),
-            'goods_code' => array(),
-            'goods_name' => array(),
-            'goods_price' => array(),
-            'goods_price_old' => array()
-        )
-    ),
-    array(
+        'content' => [
+            'goods_avail' => [],
+            'goods_code' => [],
+            'goods_name' => [],
+            'goods_price' => [],
+            'goods_price_old' => []
+        ]
+    ],
+    [
         'caption' => 'Фото',
-        'content' => array(
-            'thumb' => array(),
-            'image' => array(),
-            'img16x9' => array(),
-            'img4x3' => array(),
-            'img1x1' => array(),
-            'img2x3' => array()
-        )
-    ),
-);
+        'content' => [
+            'thumb' => [],
+            'image' => [],
+            'img16x9' => [],
+            'img4x3' => [],
+            'img1x1' => [],
+            'img2x3' => []
+        ]
+    ],
+];
 
-$settings['templates'] = array(
-    'outerTpl' => '[+wrapper+]',
-    'rowTpl' => '
-[+img_bg+]
-[+row.number+]
-[+iteration+]
-[+title:ucase+]
-[+row.class+]
-<br/>'
-);
-
-$settings['configuration'] = array(
+$settings['configuration'] = [
     'pagination' => false,
     'displayLength' => 100,
     'display' => 100,
     'enablePaste' => false,
     'sorting' => false
-);
+];
 
